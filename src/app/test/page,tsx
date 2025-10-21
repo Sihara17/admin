@@ -1,0 +1,49 @@
+"use client"
+
+import Link from "next/link"
+
+export default function BacklinkPage() {
+  const backlinks = [
+    { url: "https://v0-web-dictionary-indonesian-englis.vercel.app/", text: "Kamus", desc: "Situs resmi Bola Gila dan panduan taruhan online." },
+    { url: "https://v0-web-dictionary-indonesian-englis.vercel.app/", text: "KAmus Besar", desc: "Informasi dan tips situs betting togel terpercaya." },
+    { url: "https://v0-web-dictionary-indonesian-englis.vercel.app/", text: "WordPress Update", desc: "Project update dari WordPress sebagai sumber referensi SEO." },
+  ]
+
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="mb-8 text-center font-playfair text-4xl font-bold text-foreground">
+        Partner & Backlink Resources
+      </h1>
+      <p className="mb-12 text-center text-muted-foreground">
+        Berikut adalah daftar backlink aktif dan partner situs terpercaya yang mendukung proyek ini.
+      </p>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {backlinks.map((link, i) => (
+          <div
+            key={i}
+            className="rounded-xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition"
+          >
+            <h3 className="mb-2 text-lg font-semibold text-card-foreground">
+              <Link
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                {link.text}
+              </Link>
+            </h3>
+            <p className="text-sm text-muted-foreground">{link.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link href="/" className="text-sm text-blue-600 hover:underline">
+          ← Kembali ke Beranda
+        </Link>
+      </div>
+    </div>
+  )
+}
